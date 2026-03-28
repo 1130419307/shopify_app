@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "shopify": "shopify",
-    "build": "shopify app build",
+    "build": "npm run build --prefix web",
     "dev": "shopify app dev",
     "dev:local": "shopify app dev --use-localhost",
     "dev:reset": "shopify app dev --reset",
