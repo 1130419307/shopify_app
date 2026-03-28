@@ -1,27 +1,45 @@
 {
-  "name": "template-vue-app",
-  "version": "1.0.0",
-  "license": "UNLICENSED",
+  "name": "growing-merchant-app",
+  "version": "3.3.0",
+  "main": "web/server/src/index.js",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "extensions/*",
+    "web"
+  ],
   "scripts": {
     "shopify": "shopify",
-    "build": "npm run build",
+    "build": "shopify app build",
     "dev": "shopify app dev",
+    "dev:local": "shopify app dev --use-localhost",
+    "dev:reset": "shopify app dev --reset",
+    "dev:webhook": "shopify app webhook trigger",
     "info": "shopify app info",
     "generate": "shopify app generate",
     "deploy": "shopify app deploy",
-    "start": "npm run preview"
+    "show:env": "shopify app env show",
+    "lint": "npm-run-all2 --parallel lint:*",
+    "lint:server": "eslint web/server/src/**/*.{js,ts} --fix --ignore-pattern .gitignore",
+    "lint:client": "eslint web/client/src/**/*.{js,vue,ts} --fix --ignore-pattern .gitignore",
+    "format": "npm-run-all2 --parallel format:*",
+    "format:server": "prettier --write web/server/src/",
+    "format:client": "prettier --write web/client/src/",
+    "client:install": "npm install --workspace web/client",
+    "client:uninstall": "npm uninstall --workspace web/client",
+    "server:install": "npm install --workspace web/server",
+    "server:uninstall": "npm uninstall --workspace web/server"
   },
-  "dependencies": {},
-  "trustedDependencies": [
-    "@shopify/plugin-cloudflare"
-  ],
+  "optionalDependencies": {
+    "@shopify/cli": "^3.91.0"
+  },
   "devDependencies": {
-    "@shopify/cli": "^3.0.0",
-    "@shopify/app": "^3.0.0"
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.0.2",
+    "prettier": "^3.8.1",
+    "npm-run-all2": "^8.0.4"
   },
   "author": "ymg",
-  "private": true,
-  "workspaces": [
-    "extensions/*"
-  ]
+  "dependencies": {}
 }
