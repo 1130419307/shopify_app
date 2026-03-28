@@ -29,7 +29,8 @@
     "client:install": "npm install --workspace web/client",
     "client:uninstall": "npm uninstall --workspace web/client",
     "server:install": "npm install --workspace web/server",
-    "server:uninstall": "npm uninstall --workspace web/server"
+    "server:uninstall": "npm uninstall --workspace web/server",
+    "start": "node build/server/index.js"
   },
   "optionalDependencies": {
     "@shopify/cli": "^3.91.0"
