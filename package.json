@@ -4,7 +4,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "shopify": "shopify",
-    "build": "shopify app build",
+    "build": "npm run build --prefix web",
     "dev": "shopify app dev",
     "info": "shopify app info",
     "generate": "shopify app generate",
@@ -15,6 +15,10 @@
   "trustedDependencies": [
     "@shopify/plugin-cloudflare"
   ],
+  "devDependencies": {
+    "@shopify/cli": "^3.0.0",
+    "@shopify/app": "^3.0.0"
+  },
   "author": "ymg",
   "private": true,
   "workspaces": [
