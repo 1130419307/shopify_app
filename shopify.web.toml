@@ -1,0 +1,5 @@
+[
+commands
+]
+dev = "npm run dev --prefix web"
+build = "npm run build --prefix web"
