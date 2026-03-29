@@ -30,18 +30,15 @@
     "client:uninstall": "npm uninstall --workspace web/client",
     "server:install": "npm install --workspace web/server",
     "server:uninstall": "npm uninstall --workspace web/server",
-     "start": "node server/build/index.js"
-  },
-  "optionalDependencies": {
-    "@shopify/cli": "^3.91.0"
+    "start": "node server/build/index.js"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "cross-env": "^10.1.0",
     "eslint": "^10.0.2",
-    "prettier": "^3.8.1",
+    "nodemon": "^3.1.14",
     "npm-run-all2": "^8.0.4",
-    "@shopify/cli": "^3.60.0",
-    "@shopify/app": "^3.60.0"
+    "prettier": "^3.8.1"
   },
   "author": "ymg",
   "dependencies": {
